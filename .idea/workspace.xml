@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b10e93ba-561f-4c32-95cc-ded8c69b24b1" name="Default" comment="Initial commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/ArticleDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/impl/ArticleDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/jiangjianan/wemediaserver/dao/impl/ArticleDAOImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/object/ArticleDO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/manager/ArticleManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/manager/impl/ArticleManagerImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/api/AuthorAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/AuthorDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/impl/AuthorDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/jiangjianan/wemediaserver/dao/impl/AuthorDAOImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/object/AuthorDO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/common/action/BaseAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/common/BaseDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/common/object/BaseDO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/common/manager/BaseManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/common/manager/ManagerException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/api/RecentAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/api/SubscribeAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/TestAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/api/TopAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/action/api/UserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/UserDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/dao/impl/UserDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/jiangjianan/wemediaserver/dao/impl/UserDAOImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jiangjianan/wemediaserver/object/UserDO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ibatis/article.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ibatis/author.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/sql-map-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/content/test.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ibatis/user.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeMediaServer.iml" afterPath="$PROJECT_DIR$/WeMediaServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+    <list default="true" id="b10e93ba-561f-4c32-95cc-ded8c69b24b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeMediaServer.iws" />
@@ -114,7 +78,7 @@
       <file leaf-file-name="web.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.49118388" vertical-offset="0" max-vertical-offset="705">
+            <state line="17" column="20" selection-start="551" selection-end="551" vertical-scroll-proportion="0.64231735" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -1325,7 +1289,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="387" selection-end="387" vertical-scroll-proportion="0.49118388" vertical-offset="0" max-vertical-offset="705">
+        <state line="17" column="20" selection-start="551" selection-end="551" vertical-scroll-proportion="0.64231735" vertical-offset="0" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
