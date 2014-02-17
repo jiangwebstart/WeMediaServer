@@ -10,6 +10,7 @@ public class TestAction extends BaseAction {
     private String message;
 
     public String execute() throws Exception {
+        message = "Hello World";
         return SUCCESS;
     }
 

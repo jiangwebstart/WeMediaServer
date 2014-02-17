@@ -51,7 +51,7 @@
 
 	<select id="get" parameterClass="long" resultMap="AuthorResult">
 		SELECT
-		<include refid="user.column.all" />
+		<include refid="author.column.all" />
 		FROM wemedia_author
 		WHERE id=#value#
 	</select>
