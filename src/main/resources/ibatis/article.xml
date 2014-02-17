@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="articleDAO">
+	<typeAlias alias="ArticleDO"
+		type="com.jiangjianan.wemediaserver.object.ArticleDO" />
+
+	<resultMap id="ArticleResult" class="ArticleDO">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="url" column="url" />
+        <result property="authorId" column="author_id" />
+        <result property="authorName" column="author_name" />
+        <result property="date" column="date" />
+        <result property="gmtCreate" column="gmt_create" />
+		<result property="gmtModified" column="gmt_modified" />
+	</resultMap>
+
+	<sql id="article.column.all">
+		id, title, url, author_id, author_name, date, gmt_create, gmt_modified
+	</sql>
+	
+	<sql id="article.column.insert">
+        title, url, author_id, author_name, date, gmt_create, gmt_modified
+	</sql>
+
+	<insert id="insert" parameterClass="ArticleDO">
+		INSERT INTO wemedia_article (
+		<include refid="article.column.insert" />)
+		VALUES (
+		#title#,
+        #url#,
+        #authorId#,
+        #authorName#,
+        #date#,
+		now(),
+        now())
+        <selectKey resultClass="long" keyProperty="id">
+            SELECT
+            last_insert_id()
+        </selectKey>
+	</insert>
+
+	<update id="update" parameterClass="ArticleDO">
+		UPDATE wemedia_article
+        <dynamic prepend="set">
+            <isNotNull property="title" prepend=",">
+                title=#title#
+            </isNotNull>
+            <isNotNull property="url" prepend=",">
+                url=#url#
+            </isNotNull>
+            <isNotNull property="authorId" prepend=",">
+                author_id=#authorId#
+            </isNotNull>
+            <isNotNull property="authorName" prepend=",">
+                author_name=#authorName#
+            </isNotNull>
+            <isNotNull property="date" prepend=",">
+                date=#date#
+            </isNotNull>
+        </dynamic>
+        , gmt_modified=now()
+        WHERE id = #id#
+	</update>
+
+	<select id="get" parameterClass="long" resultMap="ArticleResult">
+		SELECT
+		<include refid="article.column.all" />
+		FROM wemedia_article
+		WHERE id=#value#
+	</select>
+
+	<delete id="delete" parameterClass="long">
+		DELETE FROM wemedia_article
+		WHERE id=#value#
+	</delete>
+
+</sqlMap>

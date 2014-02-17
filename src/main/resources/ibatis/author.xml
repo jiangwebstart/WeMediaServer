@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="authorDAO">
+	<typeAlias alias="AuthorDO"
+		type="com.jiangjianan.wemediaserver.object.AuthorDO" />
+
+	<resultMap id="AuthorResult" class="AuthorDO">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="articleCount" column="article_count" />
+        <result property="gmtCreate" column="gmt_create" />
+		<result property="gmtModified" column="gmt_modified" />
+	</resultMap>
+
+	<sql id="author.column.all">
+		id, name, article_count, gmt_create, gmt_modified
+	</sql>
+	
+	<sql id="author.column.insert">
+        name, article_count, gmt_create, gmt_modified
+	</sql>
+
+	<insert id="insert" parameterClass="AuthorDO">
+		INSERT INTO wemedia_author (
+		<include refid="author.column.insert" />)
+		VALUES (
+		#name#,
+        #articleCount#,
+		now(),
+        now())
+        <selectKey resultClass="long" keyProperty="id">
+            SELECT
+            last_insert_id()
+        </selectKey>
+	</insert>
+
+	<update id="update" parameterClass="AuthorDO">
+		UPDATE wemedia_author
+        <dynamic prepend="set">
+            <isNotNull property="name" prepend=",">
+                name=#name#
+            </isNotNull>
+            <isNotNull property="articleCount" prepend=",">
+                article_count=#articleCount#
+            </isNotNull>
+        </dynamic>
+        , gmt_modified=now()
+        WHERE id = #id#
+	</update>
+
+	<select id="get" parameterClass="long" resultMap="AuthorResult">
+		SELECT
+		<include refid="user.column.all" />
+		FROM wemedia_author
+		WHERE id=#value#
+	</select>
+
+	<delete id="delete" parameterClass="long">
+		DELETE FROM wemedia_author
+		WHERE id=#value#
+	</delete>
+
+</sqlMap>

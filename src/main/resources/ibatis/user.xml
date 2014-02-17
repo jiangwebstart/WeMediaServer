@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="userDAO">
+	<typeAlias alias="UserDO"
+		type="com.jiangjianan.wemediaserver.object.UserDO" />
+
+	<resultMap id="UserResult" class="UserDO">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="gmtCreate" column="gmt_create" />
+		<result property="gmtModified" column="gmt_modified" />
+	</resultMap>
+
+	<sql id="user.column.all">
+		id, name, gmt_create, gmt_modified
+	</sql>
+	
+	<sql id="user.column.insert">
+        name, gmt_create, gmt_modified
+	</sql>
+
+	<insert id="insert" parameterClass="UserDO">
+		INSERT INTO wemedia_user (
+		<include refid="user.column.insert" />)
+		VALUES (
+		#name#,
+		now(),
+        now())
+        <selectKey resultClass="long" keyProperty="id">
+            SELECT
+            last_insert_id()
+        </selectKey>
+	</insert>
+
+	<update id="update" parameterClass="UserDO">
+		UPDATE wemedia_user
+        <dynamic prepend="set">
+            <isNotNull property="name" prepend=",">
+                name=#name#
+            </isNotNull>
+        </dynamic>
+        , gmt_modified=now()
+        WHERE id = #id#
+	</update>
+
+	<select id="get" parameterClass="long" resultMap="UserResult">
+		SELECT
+		<include refid="user.column.all" />
+		FROM wemedia_user
+		WHERE id=#value#
+	</select>
+
+	<delete id="delete" parameterClass="long">
+		DELETE FROM wemedia_user
+		WHERE id=#value#
+	</delete>
+
+</sqlMap>
