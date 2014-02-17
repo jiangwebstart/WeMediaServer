@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WeMediaServer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="WeMediaServer.war">
+      <element id="artifact" artifact-name="WeMediaServer:war exploded" />
+    </root>
+  </artifact>
+</component>
